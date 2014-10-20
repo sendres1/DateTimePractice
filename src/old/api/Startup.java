@@ -17,6 +17,8 @@ import java.util.Calendar;
  */
 public class Startup {
     public static void main(String[] args) throws ParseException {
+        
+        // get from date/calendar object to strings
         Demo1 demo1 = new Demo1();
         Date date = demo1.getCurrentDateTime();
         System.out.println(date);
@@ -31,7 +33,8 @@ public class Startup {
         
        
         System.out.println(sdf2.format(calendar.getTime()));
-        
+       
+        // how to get from a string to calendar/date objects
         //how to get into a date object
         //format must match exactly.
         String s = "10/20/14 06:18:59 PM";
