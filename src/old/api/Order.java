@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package old.api;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,27 +14,27 @@ import java.util.Date;
  * @author sendres1
  */
 public class Order {
+
     private Date orderDate;
 
+    public String getFormattedDate(String format) {
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(orderDate);
+    }
 
-public String getFormattedDate(String format){
-    SimpleDateFormat sdf = new SimpleDateFormat(format);
-    return sdf.format(orderDate);
-}
+    public void setOrderDateFromString(String dateVale,
+            String format) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        orderDate = sdf.parse(format);
+      //  orderDate = sdf.parse(dateValue);
+    }
 
-public void setOrderDateFromString(String dateVale, 
-     String format)throws ParseException  {
-      SimpleDateFormat sdf = new SimpleDateFormat(format);
-         orderDate = sdf.parse(dateValue);
-}
+    public Date getOrderDate() {
+        return orderDate;
+    }
 
-public Date getOrderDate(){
-      return orderDate;
-}
-
-public Date setOrderDate(Date orderDate){
-    this.orderDate = orderDate;
-}
-
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
 
 }
